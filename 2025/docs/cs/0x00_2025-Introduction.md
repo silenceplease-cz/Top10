@@ -4,7 +4,7 @@
 
 # Úvod
 
-Vítejte u osmé vydání OWASP Top Ten!
+Vítejte u osmého vydání OWASP Top Ten!
 
 Velké poděkování patří všem, kteří přispěli daty a svými pohledy v rámci průzkumu. Bez vás by toto vydání nebylo možné. **Děkujeme!**
 
