@@ -34,21 +34,21 @@ Tato kategorie si udržuje první místo v žebříčku Top Ten. U 100 % testova
   <tr>
    <td>40
    </td>
-   <td>20.15%
+   <td>20,15 %
    </td>
-   <td>3.74%
+   <td>3,74 %
    </td>
-   <td>100.00%
+   <td>100,00 %
    </td>
-   <td>42.93%
+   <td>42,93 %
    </td>
-   <td>7.04
+   <td>7,04
    </td>
-   <td>3.84
+   <td>3,84
    </td>
-   <td>1,839,701
+   <td>1 839 701
    </td>
-   <td>32,654
+   <td>32 654
    </td>
   </tr>
 </table>
