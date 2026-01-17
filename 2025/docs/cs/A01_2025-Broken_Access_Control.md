@@ -71,7 +71,7 @@ Tato kategorie si udržuje první místo v žebříčku Top Ten. U 100 % testova
 * Force browsing (hádání URL) umožňující přístup k autentizovaným stránkám jako neautentizovaný uživatel nebo k privilegovaným stránkám jako běžný uživatel.
 
 
-## Prevence. 
+## Jak tomu zabránit. 
 
 Řízení přístupu je účinné pouze tehdy, pokud je implementováno v důvěryhodném kódu na straně serveru nebo v serverless API, kde útočník nemůže ovlivnit samotnou kontrolu řízení přístupu ani související metadata.
 
