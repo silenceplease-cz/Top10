@@ -74,7 +74,7 @@ Aplikace je zranitelná, pokud například:
 Bez koordinovaného a opakovatelného procesu bezpečnostního hardeningu konfigurace aplikací jsou systémy vystaveny zvýšenému riziku.
 
 
-## Prevence. 
+## Jak tomu zabránit. 
 
 Měly by být implementovány bezpečné instalační procesy, včetně:
 
