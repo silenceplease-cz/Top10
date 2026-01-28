@@ -13,7 +13,7 @@ In case of any discrepancies, the English version is authoritative.
 ## Translators
 
 Contributors:
-- Petr Dusek
+- Petr Dusek, National Agency for Communication and Information Technologies
 
 ## Contribution
 
