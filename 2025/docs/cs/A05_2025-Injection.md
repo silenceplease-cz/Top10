@@ -1,8 +1,8 @@
-# A05:2025 injektování ![icon](../assets/TOP_10_Icons_Final_Injection.png){: style="height:80px;width:80px" align="right"}
+# A05:2025 Injektování ![icon](../assets/TOP_10_Icons_Final_Injection.png){: style="height:80px;width:80px" align="right"}
 
 ## Pozadí.
 
-injektování (Injection) klesá o dvě pozice z #3 na #5 v pořadí a zachovává relativní pozici vůči A04:2025-Cryptographic Failures a A06:2025-Insecure Design. Injektování je jednou z nejvíce testovaných kategorií, přičemž 100 % aplikací je testováno na nějakou formu injektování. Má největší počet CVE ze všech kategorií, přičemž tato kategorie zahrnuje 37 CWE. Injektování zahrnuje Cross-Site Scripting (vysoká četnost / nízký dopad) s více než 30 000 CVE a SQL Injection (nízká četnost / vysoký dopad) s více než 14 000 CVE. Masivní počet nahlášených CVE pro CWE-79 Improper Neutralization of Input During Web Page Generation („Cross-Site Scripting“) snižuje průměrný vážený dopad této kategorie. 
+Injektování (Injection) klesá o dvě pozice z #3 na #5 v pořadí a zachovává relativní pozici vůči A04:2025-Cryptographic Failures a A06:2025-Insecure Design. Injektování je jednou z nejvíce testovaných kategorií, přičemž 100 % aplikací je testováno na nějakou formu injektování. Má největší počet CVE ze všech kategorií, přičemž tato kategorie zahrnuje 37 CWE. Injektování zahrnuje Cross-Site Scripting (vysoká četnost / nízký dopad) s více než 30 000 CVE a SQL Injection (nízká četnost / vysoký dopad) s více než 14 000 CVE. Masivní počet nahlášených CVE pro CWE-79 Improper Neutralization of Input During Web Page Generation („Cross-Site Scripting“) snižuje průměrný vážený dopad této kategorie. 
 
 
 ## Tabulka skóre.
