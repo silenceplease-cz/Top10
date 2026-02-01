@@ -1,13 +1,13 @@
-#  A01:2025 Nedostatečné řízení přístupu (Broken Access Control) ![icon](../assets/TOP_10_Icons_Final_Broken_Access_Control.png){: style="height:80px;width:80px" align="right"}
+#  A01:2025 Narušené řízení přístupu (Broken Access Control) ![icon](../assets/TOP_10_Icons_Final_Broken_Access_Control.png){: style="height:80px;width:80px" align="right"}
 
 
 
-## Pozadí. 
+## Pozadí
 
-Tato kategorie si udržuje první místo v žebříčku Top Ten. U 100 % testovaných aplikací byla zjištěna určitá forma nedostatečného řízení přístupu. Mezi významné související slabiny (CWE) patří zejména *CWE-200: Exposure of Sensitive Information to an Unauthorized Actor*, *CWE-201: Exposure of Sensitive Information Through Sent Data*, *CWE-918: Server-Side Request Forgery (SSRF)* a *CWE-352: Cross-Site Request Forgery (CSRF)*. Tato kategorie vykazuje v poskytnutých datech nejvyšší počet výskytů a zároveň druhý nejvyšší počet souvisejících zranitelností (CVE).
+Tato kategorie si udržuje první místo v žebříčku Top Ten. U 100 % testovaných aplikací byla zjištěna určitá forma narušeného řízení přístupu. Mezi významné související slabiny (CWE) patří zejména *CWE-200: Exposure of Sensitive Information to an Unauthorized Actor*, *CWE-201: Exposure of Sensitive Information Through Sent Data*, *CWE-918 Server-Side Request Forgery (SSRF)* a *CWE-352: Cross-Site Request Forgery (CSRF)*. Tato kategorie vykazuje v poskytnutých datech nejvyšší počet výskytů a zároveň druhý nejvyšší počet souvisejících zranitelností (CVE).
 
 
-## Tabulka skóre.
+## Tabulka skóre
 
 
 <table>
@@ -55,7 +55,7 @@ Tato kategorie si udržuje první místo v žebříčku Top Ten. U 100 % testova
 
 
 
-## Popis. 
+## Popis 
 
 Řízení přístupu vynucuje bezpečnostní politiku tak, aby uživatelé nemohli vykonávat činnosti mimo rozsah jim určených oprávnění. Selhání řízení přístupu typicky vedou k neoprávněnému zpřístupnění informací, k neoprávněné změně nebo zničení dat, případně k provádění aplikačních nebo obchodních funkcí mimo oprávnění daného uživatele. Mezi běžné zranitelnosti v oblasti řízení přístupu patří:
 
@@ -71,26 +71,26 @@ Tato kategorie si udržuje první místo v žebříčku Top Ten. U 100 % testova
 * Force browsing (hádání URL) umožňující přístup k autentizovaným stránkám jako neautentizovaný uživatel nebo k privilegovaným stránkám jako běžný uživatel.
 
 
-## Jak tomu zabránit. 
+## Jak tomu zabránit 
 
 Řízení přístupu je účinné pouze tehdy, pokud je implementováno v důvěryhodném kódu na straně serveru nebo v serverless API, kde útočník nemůže ovlivnit samotnou kontrolu řízení přístupu ani související metadata.
 
 
 
 * S výjimkou veřejných zdrojů musí být přístup implicitně zakázán (deny by default).
-* Mechanismy řízení přístupu by měly být implementovány centrálně a znovupoužitelné v celé aplikaci; zároveň by mělo být omezeno používání Cross-Origin Resource Sharing (CORS).
+* Mechanismy řízení přístupu by měly být implementovány jednou a znovupoužitelné v celé aplikaci; zároveň by mělo být omezeno používání Cross-Origin Resource Sharing (CORS).
 * Řízení přístupu na úrovni aplikačních modelů musí vynucovat vazbu mezi uživatelem (nebo jiným subjektem) a konkrétními datovými záznamy, nikoli umožňovat uživatelům vytvářet, číst, upravovat nebo mazat libovolné záznamy.
 * Jedinečné byznys limity aplikace musí být vynucovány na úrovni doménových modelů.
 * Na webovém serveru musí být zakázán výpis adresářů a je nutné zajistit, aby se ve webovém kořeni nenacházela metadata repozitářů (např. .git) ani záložní soubory.
 * Porušení řízení přístupu musí být logována a v odůvodněných případech (např. při opakovaných selháních) musí být administrátoři upozorněni.
-* Pro přístup k API a aplikačním kontrolerům musí být uplatněn rate limiting, aby se omezily dopady automatizovaných útočných nástrojů.
+* Pro přístup k API a kontrolerům musí být uplatněn rate limiting, aby se omezily dopady automatizovaných útočných nástrojů.
 * Stavové identifikátory relací musí být po odhlášení na straně serveru zneplatněny. Bezstavové tokeny JWT by měly mít krátkou dobu platnosti, aby se minimalizovalo časové okno pro jejich zneužití. U JWT s delší dobou platnosti je vhodné použít refresh tokeny a postupy dle standardů OAuth pro odvolání přístupu.
 * Doporučuje se používat zavedené knihovny nebo návrhové vzory, které poskytují jednoduché a deklarativní řízení přístupu.
 
 Vývojáři i pracovníci QA by měli zahrnout funkční testování řízení přístupu do jednotkových i integračních testů.
 
 
-## Příklady scénářů útoků. 
+## Příklady scénářů útoků 
 
 **Scénář #1:** Aplikace používá neověřená data v SQL dotazu, který přistupuje k informacím o účtu:
 
@@ -127,7 +127,7 @@ Pokud má neautentizovaný uživatel přístup k některé z těchto stránek, j
 $ curl https://example.com/app/admin_getappInfo
 ```
 
-## Reference.
+## Reference
 
 * [OWASP Proactive Controls: C1: Implement Access Control](https://top10proactive.owasp.org/archive/2024/the-top-10/c1-accesscontrol/)
 * [OWASP Application Security Verification Standard: V8 Authorization](https://github.com/OWASP/ASVS/blob/master/5.0/en/0x17-V8-Authorization.md)
