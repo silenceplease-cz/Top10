@@ -1,11 +1,11 @@
 # A03:2025 Selhání dodavatelského řetězce softwaru (Software Supply Chain Failures) ![icon](../assets/TOP_10_Icons_Final_Vulnerable_Outdated_Components.png){: style="height:80px;width:80px" align="right"}
 
 
-## Pozadí.
+## Pozadí
 
 Tato položka se umístila na prvním místě v komunitním průzkumu Top 10, přičemž ji přesně 50 % respondentů zařadilo na 1. místo. Od svého prvního výskytu v Top 10 v roce 2013 pod názvem „A9 – Používání komponent se známými zranitelnostmi“ se rozsah tohoto rizika rozšířil a nyní zahrnuje veškerá selhání dodavatelského řetězce, nikoli pouze ta související se známými zranitelnostmi. Navzdory tomuto rozšíření zůstávají selhání dodavatelského řetězce obtížně identifikovatelná – pouze 11 položek Common Vulnerabilities and Exposures (CVE) má přiřazené související CWE. Při testování a reportování v komunitně poskytnutých datech však tato kategorie vykazuje nejvyšší průměrnou míru výskytu, a to 5,19 %. Mezi relevantní CWE patří *CWE-477: Use of Obsolete Function*, *CWE-1104: Use of Unmaintained Third Party Components*, *CWE-1329: Reliance on Component That is Not Updateable* a *CWE-1395: Dependency on Vulnerable Third-Party Component*.
 
-## Score table.
+## Tabulka skóre
 
 
 <table>
@@ -53,7 +53,7 @@ Tato položka se umístila na prvním místě v komunitním průzkumu Top 10, p�
 
 
 
-## Popis.
+## Popis
 
 Selhání softwarového dodavatelského řetězce jsou selhání nebo jiné kompromitace v procesu sestavování, distribuce nebo aktualizace softwaru. Často jsou způsobeny zranitelnostmi nebo škodlivými změnami v kódu třetích stran, nástrojích nebo dalších závislostech, na nichž systém závisí.
 
@@ -68,11 +68,11 @@ Pravděpodobně jste zranitelní, pokud:
 * komponenty z nedůvěryhodných zdrojů jsou používány v produkčních prostředích nebo na ně mohou mít vliv, a to napříč jakoukoli částí technologického stacku.
 * neopravujete ani neaktualizujete základní platformu, frameworky a závislosti včas a na základě rizik. K tomu obvykle dochází v prostředích, kde jsou opravy prováděny jednou za měsíc nebo za čtvrtletí v rámci řízení změn, což vystavuje organizace zbytečnému riziku po dobu několika dnů nebo měsíců, než jsou zranitelnosti opraveny.
 * vývojáři netestují kompatibilitu aktualizovaných, upgradovaných nebo záplatovaných knihoven.
-* nezabezpečujete konfigurace všech částí svého systému (viz A02:2025 – Security Misconfiguration).
+* nezabezpečujete konfigurace všech částí svého systému (viz [A02:2025 - Chybná bezpečnostní konfigurace (Security Misconfiguration)](https://owasp.org/Top10/2025/A02_2025-Security_Misconfiguration/)).
 * vaše CI/CD pipeline má slabší zabezpečení než systémy, které sestavuje a nasazuje, zejména pokud je složitá.
 
 
-## Jak tomu zabránit.
+## Jak tomu zabránit
 
 Měl by být zaveden proces správy záplat, jehož cílem je:
 
@@ -101,7 +101,7 @@ Měl by být zaveden proces řízení změn nebo systém sledování změn pro s
 * Registrech kontejnerů
 
 
-Hardenovat následující systémy, včetně povolení MFA a uzamčení IAM:
+Zabezpečit (hardenovat) následující systémy, včetně povolení MFA a uzamčení IAM:
 
 * Repozitáře zdrojového kódu (včetně neukládání tajných údajů, ochrany větví a zálohování)
 * Vývojářské pracovní stanice (pravidelné záplatování, MFA, monitorování a další)
@@ -112,7 +112,7 @@ Hardenovat následující systémy, včetně povolení MFA a uzamčení IAM:
 Každá organizace musí zajistit průběžný plán monitorování, triáže a aplikace aktualizací nebo změn konfigurace po celou dobu životnosti aplikace nebo aplikačního portfolia.
 
 
-## Příklady scénářů útoků.
+## Příklady scénářů útoků
 
 **Scénář #1:** Důvěryhodný dodavatel je kompromitován malwarem, což vede ke kompromitaci vašich počítačových systémů při aktualizaci. Nejznámějším příkladem je pravděpodobně:
 
