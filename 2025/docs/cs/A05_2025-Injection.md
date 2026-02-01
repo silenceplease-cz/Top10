@@ -1,11 +1,11 @@
-# A05:2025 Injektování ![icon](../assets/TOP_10_Icons_Final_Injection.png){: style="height:80px;width:80px" align="right"}
+# A05:2025 Injekce ![icon](../assets/TOP_10_Icons_Final_Injection.png){: style="height:80px;width:80px" align="right"}
 
-## Pozadí.
+## Pozadí
 
-Injektování (Injection) klesá o dvě pozice z #3 na #5 v pořadí a zachovává relativní pozici vůči A04:2025-Cryptographic Failures a A06:2025-Insecure Design. Injektování je jednou z nejvíce testovaných kategorií, přičemž 100 % aplikací je testováno na nějakou formu injektování. Má největší počet CVE ze všech kategorií, přičemž tato kategorie zahrnuje 37 CWE. Injektování zahrnuje Cross-Site Scripting (vysoká četnost / nízký dopad) s více než 30 000 CVE a SQL Injection (nízká četnost / vysoký dopad) s více než 14 000 CVE. Masivní počet nahlášených CVE pro CWE-79 Improper Neutralization of Input During Web Page Generation („Cross-Site Scripting“) snižuje průměrný vážený dopad této kategorie. 
+Injekce (Injection) klesá o dvě pozice z #3 na #5 v pořadí a zachovává relativní pozici vůči A04:2025-Cryptographic Failures a A06:2025-Insecure Design. Injekce je jednou z nejvíce testovaných kategorií, přičemž 100 % aplikací je testováno na nějakou formu injekce. Má největší počet CVE ze všech kategorií, přičemž tato kategorie zahrnuje 37 CWE. Injekce zahrnuje Cross-site Scripting (vysoká četnost / nízký dopad) s více než 30 000 CVE a SQL Injection (nízká četnost / vysoký dopad) s více než 14 000 CVE. Masivní počet nahlášených CVE pro CWE-79 Improper Neutralization of Input During Web Page Generation („Cross-site Scripting“) snižuje průměrný vážený dopad této kategorie. 
 
 
-## Tabulka skóre.
+## Tabulka skóre
 
 
 <table>
@@ -32,36 +32,36 @@ Injektování (Injection) klesá o dvě pozice z #3 na #5 v pořadí a zachováv
   <tr>
    <td>37
    </td>
-   <td>13.77%
+   <td>13,77 %
    </td>
-   <td>3.08%
+   <td>3,08 %
    </td>
-   <td>100.00%
+   <td>100,00 %
    </td>
-   <td>42.93%
+   <td>42,93 %
    </td>
-   <td>7.15
+   <td>7,15
    </td>
-   <td>4.32
+   <td>4,32
    </td>
-   <td>1,404,249
+   <td>1 404 249
    </td>
-   <td>62,445
+   <td>62 445
    </td>
   </tr>
 </table>
 
 
 
-## Popis.
+## Popis
 
-Zranitelnost typu injektování je chyba aplikace, která umožňuje odeslat nedůvěryhodný uživatelský vstup do interpretu (např. prohlížeči, databázi nebo příkazové řádce) a způsobuje, že interpret provede části tohoto vstupu jako příkazy. 
+Zranitelnost typu injekce je chyba aplikace, která umožňuje odeslat nedůvěryhodný uživatelský vstup do interpretu (např. prohlížeči, databázi nebo příkazové řádce) a způsobuje, že interpret provede části tohoto vstupu jako příkazy. 
 
 Aplikace je zranitelná vůči útoku, pokud:
 
 * Uživatelem dodaná data nejsou aplikací validována, filtrována ani sanitizována.
-* Dynamické dotazy nebo volání bez parametrizace bez kontextově závislého escapování jsou používány přímo v interpretu.
-* Neočištěná (nesanitizovaná) data jsou použita v parametrech vyhledávání ORM (objektově-relační mapování) k vytažení dalších citlivých záznamů.
+* Dynamické dotazy nebo volání bez parametrizace a bez kontextově závislého escapování jsou používány přímo v interpretu.
+* Neočištěná (nesanitizovaná) data jsou použita v parametrech vyhledávání ORM (objektově-relační mapování) k získání dalších citlivých záznamů.
 * Potenciálně nepřátelská data jsou přímo použita nebo zřetězena. Výsledný SQL dotaz nebo příkaz pak obsahuje jak strukturu, tak i škodlivá data – v dynamických dotazech, příkazech nebo uložených procedurách.
 
 Mezi nejčastější typy injekcí patří SQL injection, NoSQL injection, injekce příkazů operačního systému (OS command injection), injekce v kontextu ORM, LDAP injection a injekce do Expression Language (EL) nebo Object Graph Navigation Library (OGNL). Princip je napříč interpretry stejný. Detekce se nejlépe provádí kombinací kontroly zdrojového kódu a automatizovaného testování (včetně fuzzingu) všech vstupů: parametrů, hlaviček, částí URL, cookies a datových vstupů ve formátech JSON, SOAP a XML. Zařazení nástrojů SAST, DAST a IAST do CI/CD pipeline může pomoci odhalit injekční zranitelnosti ještě před nasazením do produkce.
@@ -69,9 +69,9 @@ Mezi nejčastější typy injekcí patří SQL injection, NoSQL injection, injek
 V souvislosti s LLM se rozšířila i příbuzná třída injekčních zranitelností. Těm se samostatně věnuje [OWASP LLM Top 10](https://genai.owasp.org/llm-top-10/), konkrétně [LLM01:2025 Prompt Injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/).
 
 
-## Jak tomu zabránit. 
+## Jak tomu zabránit
 
-Nejlepším způsobem, jak zabránit injekci, je oddělit data od příkazů a dotazů:
+Nejlepší způsob, jak zabránit injekci, vyžaduje oddělit data od příkazů a dotazů:
 
 * Preferovanou možností je použití bezpečného API, které se zcela vyhne použití interpretu, poskytuje parametrizované rozhraní nebo umožní migraci na nástroje pro objektově-relační mapování (ORM). 
 **Poznámka:** I když jsou uložené procedury parametrizované, mohou stále zavést SQL injekci, pokud PL/SQL nebo T-SQL zřetězí dotazy a data nebo vykoná nepřátelská data pomocí EXECUTE IMMEDIATE nebo exec().
@@ -84,7 +84,7 @@ Pokud není možné oddělit data od příkazů, můžete hrozby snížit pomoc�
 
 **Upozornění:** Tyto techniky zahrnují parsování a escapování složitých řetězců, což je činí náchylnými k chybám a málo odolnými vůči drobným změnám v základním systému. 
 
-## Příklady scénářů útoků.
+## Příklady scénářů útoků
 
 **Scénář #1:** Aplikace používá nedůvěryhodná data při sestavování následujícího zranitelného SQL volání:
 
@@ -100,7 +100,7 @@ http://example.com/app/accountView?id=' OR '1'='1
 
 Tím se změní význam dotazu tak, že vrátí všechny záznamy z tabulky accounts. Nebezpečnější útoky by mohly upravit nebo smazat data, nebo dokonce vyvolat uložené procedury.
 
-**Scénář #2:** Slepá důvěra aplikace ve frameworky může vést k dotazům, které jsou stále zranitelné. Například Hibernate Query Language (HQL):
+**Scénář #2:** Slepá důvěra aplikace frameworkům může vést k dotazům, které jsou stále zranitelné. Například Hibernate Query Language (HQL):
 
 ```
 Query HQLQuery = session.createQuery("FROM accounts WHERE custID='" + request.getParameter("id") + "'");
@@ -117,7 +117,7 @@ Runtime.getRuntime().exec(cmd);
 
 Útočník zadá příkaz `example.com; cat /etc/passwd`, aby provedl libovolné příkazy na serveru.
 
-## Reference.
+## Reference
 
 * [OWASP Proactive Controls: Secure Database Access](https://owasp.org/www-project-proactive-controls/v3/en/c3-secure-database)
 * [OWASP ASVS: V5 Input Validation and Encoding](https://owasp.org/www-project-application-security-verification-standard)
@@ -132,7 +132,7 @@ Runtime.getRuntime().exec(cmd);
 
 
 
-## Seznam mapovaných CWE.
+## Seznam mapovaných CWE
 
 * [CWE-20 Improper Input Validation](https://cwe.mitre.org/data/definitions/20.html)
 
