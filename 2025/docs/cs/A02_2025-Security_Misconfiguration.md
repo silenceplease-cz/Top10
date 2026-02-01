@@ -1,11 +1,11 @@
 # A02:2025 Chybná bezpečnostní konfigurace (Security Misconfiguration) ![icon](../assets/TOP_10_Icons_Final_Security_Misconfiguration.png){: style="height:80px;width:80px" align="right"}
 
 
-## Pozadí. 
+## Pozadí
 
-Tato kategorie se oproti předchozímu vydání posunula z #5 místa na vyšší pozici. U 100 % testovaných aplikací byla zjištěna nějaká forma chybné konfigurace, s průměrnou mírou výskytu 3,00 % a s více než 719 tisíci výskyty slabin klasifikovaných podle Common Weakness Enumeration (CWE) v této rizikové kategorii. S rostoucím rozšířením vysoce konfigurovatelného softwaru není překvapivé, že tato kategorie v žebříčku stoupá. Mezi významné zjištěné slabiny patří zejména *CWE-16: Configuration* a *CWE-611: Improper Restriction of XML External Entity Reference (XXE)*.
+Tato kategorie se oproti předchozímu vydání posunula z 5. místa na vyšší 2. pozici. U 100 % testovaných aplikací byla zjištěna nějaká forma chybné konfigurace, s průměrnou mírou výskytu 3,00 % a s více než 719 tisíci výskyty slabin klasifikovaných podle Common Weakness Enumeration (CWE) v této rizikové kategorii. S rostoucím rozšířením vysoce konfigurovatelného softwaru není překvapivé, že tato kategorie v žebříčku stoupá. Mezi významné zjištěné slabiny patří zejména *CWE-16: Configuration* a *CWE-611: Improper Restriction of XML External Entity Reference (XXE)*.
 
-## Tabulka skóre.
+## Tabulka skóre
 
 
 <table>
@@ -53,7 +53,7 @@ Tato kategorie se oproti předchozímu vydání posunula z #5 místa na vyšší
 
 
 
-## Popis. 
+## Popis
 
 Chybná bezpečnostní konfigurace znamená, že systém, aplikace nebo cloudová služba jsou nakonfigurovány nesprávně z hlediska bezpečnosti, což vede ke vzniku zranitelností.
 
@@ -74,13 +74,13 @@ Aplikace je zranitelná, pokud například:
 Bez koordinovaného a opakovatelného procesu bezpečnostního hardeningu konfigurace aplikací jsou systémy vystaveny zvýšenému riziku.
 
 
-## Jak tomu zabránit. 
+## Jak tomu zabránit 
 
 Měly by být implementovány bezpečné instalační procesy, včetně:
 
 * Opakovatelný proces hardeningu umožňující rychlé a snadné nasazení dalšího prostředí s odpovídajícím zabezpečením. Vývojové, testovací (QA) a produkční prostředí by měla být konfigurována shodně, přičemž v každém prostředí by se měly používat odlišné přihlašovací údaje. Tento proces by měl být automatizován, aby se minimalizovalo úsilí potřebné k nastavení nového bezpečného prostředí.
 * Minimální platforma bez zbytečných funkcí, komponent, dokumentace nebo ukázek. Odstraňte nebo neinstalujte nepoužívané funkce a frameworky.
-* Revize a aktualizace konfigurací v návaznosti na všechna bezpečnostní upozornění, aktualizace a záplaty jako součást procesu správy záplat (viz [A03:2025 Selhání dodavatelského řetězce softwaru](A03_2025-Software_Supply_Chain_Failures.md). Kontrola oprávnění cloudových úložišť (např. oprávnění S3 bucketů).
+* Revize a aktualizace konfigurací v návaznosti na všechna bezpečnostní upozornění, aktualizace a záplaty jako součást procesu správy záplat (viz [A03:2025 Selhání dodavatelského řetězce softwaru](A03_2025-Software_Supply_Chain_Failures.md)). Kontrola oprávnění cloudových úložišť (např. oprávnění S3 bucketů).
 * Segmentovanou architekturu aplikace, která zajišťuje účinné a bezpečné oddělení komponent nebo tenantů pomocí segmentace, kontejnerizace nebo cloudových bezpečnostních skupin (ACL).
 * Zasílání bezpečnostních direktiv klientům, např. bezpečnostních hlaviček (Security Headers).
 * Automatizovaný proces ověřování účinnosti konfigurací a nastavení ve všech prostředích.
@@ -90,7 +90,7 @@ Měly by být implementovány bezpečné instalační procesy, včetně:
 
 
 
-## Příklady scénářů útoků. 
+## Příklady scénářů útoků 
 
 **Scénář #1:** Na aplikačním serveru zůstaly nasazeny ukázkové aplikace, které nebyly z produkčního prostředí odstraněny. Tyto aplikace obsahují známé bezpečnostní chyby, které mohou útočníci zneužít ke kompromitaci serveru. Pokud je jednou z těchto aplikací administrační konzole a výchozí účty nebyly změněny, útočník se přihlásí pomocí výchozích přihlašovacích údajů a převezme kontrolu.
 
@@ -101,7 +101,7 @@ Měly by být implementovány bezpečné instalační procesy, včetně:
 **Scénář #4:** Poskytovatel cloudových služeb (CSP) má ve výchozím nastavení povolena oprávnění ke sdílení otevřená do Internetu. To umožňuje přístup k citlivým datům uloženým v cloudovém úložišti.
 
 
-## Reference.
+## Reference
 
 * [OWASP Testing Guide: Configuration Management](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/README)
 * [OWASP Testing Guide: Testing for Error Codes](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/08-Testing_for_Error_Handling/01-Testing_For_Improper_Error_Handling)
